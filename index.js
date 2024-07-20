@@ -12,7 +12,7 @@ const thank = document.getElementById('thank') // Getting the Id of the cvc numb
 const myForm = document.getElementById('myForm') // Getting the Id of the cvc number using Dom
 
 
-document.getElementById("myForm").addEventListener('submit', function(event){
+document.getElementById("myForm").addEventListener('submit', function(event){  
     event.preventDefault();
     validateForm();
 });
@@ -98,7 +98,7 @@ function cardNumbervalidation(cardNumberInput){  // function to make sure that i
 
 function yearvalidation( expYearInput){  // function to make sure that if the user input the year it should be only digits and not more that 2 
     let value = expYearInput.value; // Get the current value of the input field
-    if (value.length > 2) {
+    if (value.length > 2) { // condition for the lengt value to when it is freater than 2
         expYearInput.value = value.substring(0, 2); // Limit the length to 2 characters
     }
 
