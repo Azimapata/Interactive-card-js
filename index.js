@@ -3,13 +3,13 @@ const cardNumberInput = document.getElementById('cardNumber');  // Getting the I
 const expMonthInput = document.getElementById('expMonth');    // Getting the Id of the Month using Dom
 const expYearInput = document.getElementById('expYear');    // Getting the Id of the year using Dom
 const cvcInput = document.getElementById('cvc');     // Getting the Id of the cvc number using Dom
-const cardNumberDisplay = document.getElementById('cardNumberDisplay')
-const  cardholderNameDisplay = document.getElementById('cardholderNameDisplay')
-const  expiryDateDisplay = document.getElementById('expiryDateDisplay')
-const cvcnumberDisplay = document.getElementById('cvcnumberDisplay')
-const confirmbutton = document.getElementById('confirmbutton')
-const thank = document.getElementById('thank')
-const myForm = document.getElementById('myForm')
+const cardNumberDisplay = document.getElementById('cardNumberDisplay') // Getting the Id of the cvc number using Dom
+const  cardholderNameDisplay = document.getElementById('cardholderNameDisplay') // Getting the Id of the cvc number using Dom
+const  expiryDateDisplay = document.getElementById('expiryDateDisplay') // Getting the Id of the cvc number using Dom
+const cvcnumberDisplay = document.getElementById('cvcnumberDisplay') // Getting the Id of the cvc number using Dom
+const confirmbutton = document.getElementById('confirmbutton') // Getting the Id of the cvc number using Dom
+const thank = document.getElementById('thank') // Getting the Id of the cvc number using Dom
+const myForm = document.getElementById('myForm') // Getting the Id of the cvc number using Dom
 
 
 document.getElementById("myForm").addEventListener('submit', function(event){
@@ -69,9 +69,9 @@ function validateForm()
         
             // formatCardNumber(cardNumberInput);
    
-            confirmbutton.addEventListener('click', () => {
-                thank.style.display = 'block';
-                myForm.style.display = 'none';
+            confirmbutton.addEventListener('click', () => {  //function on when the user press the confirm button upon completion the form should not display but the thank you page should display
+                thank.style.display = 'block';   // function so that the thank you page should display
+                myForm.style.display = 'none';  // function so that the form should not display
                 // cardNumberDisplay.textContent =  cardNumber.replace(/(\d{6})(\d{6})(\d+)/, '$1******$3');
                 cardNumberDisplay.textContent  = cardNumber.replace(/(\d{6})(\d{6})(\d+)/, '$1******$3');
               });
