@@ -1,0 +1,96 @@
+@font-face {
+    font-family: Syne;
+    src: url("Syne-VariableFont_wght.ttf");
+}
+@font-face {
+    font-family: Syne-Bold;
+    src: url("/Syne/static/Syne-Bold.ttf");
+}
+@font-face {
+    font-family: Syne-ExtraBold;
+    src: url("/Syne/static/Syne-ExtraBold.ttf");
+}
+@font-face {
+    font-family: Syne-Medium;
+    src: url("/Syne/static/Syne-Medium.ttf");
+}
+@font-face {
+    font-family: Syne-Regular;
+    src: url("/Syne/static/Syne-Regular.ttf");
+}
+@font-face {
+    font-family: Syne-SemiBold;
+    src: url("/Syne/static/Syne-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: Montserrat-Black;
+    src: url("/Montserrat/static/Montserrat-Black.ttf");
+}
+@font-face {
+    font-family: Montserrat-Blackitalic;
+    src: url("/Montserrat/static/Montserrat-BlackItalic.ttf");
+}
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url("/Montserrat/static/Montserrat-Bold.ttf");
+}
+@font-face {
+    font-family: Montserrat-Bolditalic;
+    src: url("/Montserrat/static/Montserrat-BoldItalic.ttf");
+}
+@font-face {
+    font-family: Montserrat-ExtaBold;
+    src: url("/Montserrat/static/Montserrat-ExtraBold.ttf");
+}
+@font-face {
+    font-family: Montserrat-ExtraBolditalic;
+    src: url("/Montserrat/static/Montserrat-ExtraBoldItalic.ttf");
+}
+@font-face {
+    font-family: Montserrat-Extralight;
+    src: url("/Montserrat/static/Montserrat-ExtraLight.ttf");
+}
+@font-face {
+    font-family: Montserrat-Extralightitalic;
+    src: url("/Montserrat/static/Montserrat-ExtraLightItalic.ttf");
+}
+@font-face {
+    font-family: Montserrat-italic;
+    src: url("/Montserrat/static/Montserrat-Italic.ttf");
+}
+@font-face {
+    font-family: Montserrat-light;
+    src: url("/Montserrat/static/Montserrat-Light.ttf");
+}
+@font-face {
+    font-family: Montserrat-lightitalic;
+    src: url("/Montserrat/static/Montserrat-LightItalic.ttf");
+}
+@font-face {
+    font-family: Montserrat-Medium;
+    src: url("/Montserrat/static/Montserrat-Medium.ttf");
+}
+@font-face {
+    font-family: Montserrat-Mediumitalic;
+    src: url("/Montserrat/static/Montserrat-MediumItalic.ttf");
+}
+@font-face {
+    font-family: Montserrat-Regular;
+    src: url("/Montserrat/static/Montserrat-Regular.ttf");
+}
+@font-face {
+    font-family: Montserrat-SemiBold;
+    src: url("/Montserrat/static/Montserrat-SemiBold.ttf");
+}
+@font-face {
+    font-family: Montserrat-SemiBoldItalic;
+    src: url("/Montserrat/static/Montserrat-Regular.ttf");
+}
+@font-face {
+    font-family: Montserrat-Regular;
+    src: url("/Montserrat/static/Montserrat-Regular.ttf");
+}
+
+
+

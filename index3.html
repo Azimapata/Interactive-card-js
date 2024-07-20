@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="index.js"></script> -->
+</head>
+<body>
+      <div class="flex">
+        <div class="container w-[30%] h-[100vh]" style=" background-image: url('/images/bg-main-desktop.png') ; background-size: cover; ">
+           
+             <div style="background-image: url('/images/bg-card-front.png'); background-size: cover; left: 50%; " class="w-[80%] h-[270px] ml-[290px] mt-[200px] rounded-[10px]">
+                <img src="/images/card-logo.svg" alt="" class="ml-[40px] pt-[26px]">
+                <p class="pt-[50px] pl-[30px] text-[36px] text-white font-[Montserrat-Regular] " id="cardNumberDisplay"> 0000 0000 0000 0000</p>
+            
+                    <div class="flex font-[Syne-Regular]  text-white mt-8">
+                        <p class="ml-[30px] mr-[200px] text-[14px]"  id="cardholderNameDisplay">Jane Appleseed</p>
+                        <p class="font-[Montserrat-Regular]" id="expiryDateDisplay" >00/00</span></p>
+                     </div>
+                
+             </div>
+             <div  style="background-image: url('/images/bg-card-back.png'); background-size: cover; left: 80%; " class="w-[80%] h-[270px] ml-[400px] mt-[40px] rounded-[10px]" >
+               <p class="pt-[120px] pl-[390px] text-white font-[Montserrat-Regular] " id="cvcnumberDisplay">000</p>
+              
+             </div>
+
+        </div>
+        <div class="ml-[550px] mt-[300px]"  >
+           <form id="myForm">
+            <div>
+                <p class="font-[Syne-Medium] text-[15px] ">CARDHOLDER NAME</p>
+                <input type="text" name=""  id="cardholderName" id="" placeholder="   e.g. Jane Appleseed" class="w-[500px]   border-[1.6px] rounded-[5px] font-[Syne-Medium] h-[50px] text-[17px] p-[10px] pl-[50px]" >
+                <p class="text-red-500 text-sm hidden font-[Syne-Medium]" id="nameError">Cardholder name cannot be blank</p>
+            
+            </div>
+           
+            <div class="mt-[20px]">
+                <p class="font-[Syne-Medium] text-[15px] ">CARD NUMBER</p>
+                <input type="nunber" name="" id="cardNumber" oninput="cardNumbervalidation(this)" placeholder="   e.g. 1234 5678 9123 000" class="w-[500px]   border-[1.6px] rounded-[5px] font-[Syne-Medium] h-[50px] text-[17px] p-[10px]  pl-[50px]" >
+                <p class="text-red-500 text-sm hidden font-[Syne-Medium]" id="numberError">Card number name cannot be blank</p>
+ 
+            </div>
+           
+            <div class="mt-[20px]">
+                <p class="font-[Syne-Medium] text-[15px] ">EXP. DATE (MM/YY) <span class="ml-[20px]">CVC</span></p>
+                <input type="nunber" name="" id="expMonth" placeholder="   MM" oninput="monthvalidation(this)" class="w-[68px]   border-[1.6px] rounded-[5px] font-[Syne-Medium] h-[50px] p-[10px] text-[17px]" >
+                <input type="nunber" name="" id="expYear" placeholder="    YY" oninput="  yearvalidation(this)" class="w-[68px]   border-[1.6px] rounded-[5px] font-[Syne-Medium] h-[50px] p-[10px] text-[17px]" >
+                <input type="nunber" name="" id="cvc" placeholder="   e.g. 123" oninput="cvcvalidation(this)" class="w-[250px]   border-[1.6px] rounded-[5px] font-[Syne-Medium] h-[35px] ml-[16px]  h-[50px] p-[10px] text-[17px] " >
+                <p class="text-red-500 text-sm hidden font-[Syne-Medium]" id="dateError">can't be blank  <span class="ml-[90px]">can't be blank</span>    </p>
+       
+            </div>
+
+            <button onclick="validateForm()" type="button"   id="confirmbutton" class="mt-[50px] bg-[#3c096c] text-white font-[Syne-Medium] pr-[230px] pl-[230px] pb-[10px] pt-[10px] rounded-[3px] h-[50px] " >Confirm</button>
+        </form>
+        </div>
+
+
+        <div id="thank" style="display: none;" class="-ml-[500px]" >
+            <img class="ml-[750px] mt-[340px]" src="images/icon-complete.svg" alt="">
+            <h1 class="font-[Syne-SemiBold] mt-[20px]  ml-[710px] text-[30px]"  >Thank you!</h1>
+            <p class="font-[Syne-SemiBold] mt-[9px] ml-[690px]" >We've added your card details</p>
+            <button  type="button"  class=" ml-[650px] mt-[50px] bg-[#3c096c] text-white font-[Syne-Medium] pr-[140px] pl-[140px] pb-[10px] pt-[10px] rounded-[4px] h-[50px] " >Confirm</button>
+            </div>
+
+
+    </div> 
+
+
+    
+   
+<script src="index.js"></script>
+
+     <!-- <script>
+         function validateForm() {
+            // Prevent form submission
+            event.preventDefault();
+
+            // Get input fields
+            const cardholderName = document.getElementById('cardholderName');
+            const cardNumber = document.getElementById('cardNumber');
+            const expMonth = document.getElementById('expMonth');
+            const expYear = document.getElementById('expYear');
+            const cvc = document.getElementById('cvc');
+
+            // Get error messages
+            const nameError = document.getElementById('nameError');
+            const numberError = document.getElementById('numberError');
+            const dateError = document.getElementById('dateError');
+
+            // Validation
+            let isValid = true;
+
+            if (cardholderName.value.trim() === '') {
+                cardholderName.classList.add('border-red-500');
+                nameError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                cardholderName.classList.remove('border-red-500');
+                nameError.classList.add('hidden');
+            }
+
+            if (cardNumber.value.trim() === '') {
+                cardNumber.classList.add('border-red-500');
+                numberError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                cardNumber.classList.remove('border-red-500');
+                numberError.classList.add('hidden');
+            }
+
+            if (expMonth.value.trim() === '' || expYear.value.trim() === '' || cvc.value.trim() === '') {
+                expMonth.classList.add('border-red-500');
+                expYear.classList.add('border-red-500');
+                cvc.classList.add('border-red-500');
+                dateError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                expMonth.classList.remove('border-red-500');
+                expYear.classList.remove('border-red-500');
+                cvc.classList.remove('border-red-500');
+                dateError.classList.add('hidden');
+            }
+
+            if (isValid) {
+                alert('Form submitted successfully!');
+            }
+
+            formatCardNumber()
+        }
+
+        function formatCardNumber(input) {
+        let value = input.value.replace(/\D/g, ''); // Remove all non-digit characters
+        if (value.length > 16) value = value.substring(0, 16); // Limit the length to 16 digits
+        input.value = value.replace(/(.{4})/g, '$1 ').trim(); // Add spaces every 4 digits
+        }
+     </script> -->
+</body>
+</html>
+
