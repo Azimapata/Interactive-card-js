@@ -74,70 +74,9 @@
    
 <script src="index.js"></script>
 
-     <!-- <script>
-         function validateForm() {
-            // Prevent form submission
-            event.preventDefault();
-
-            // Get input fields
-            const cardholderName = document.getElementById('cardholderName');
-            const cardNumber = document.getElementById('cardNumber');
-            const expMonth = document.getElementById('expMonth');
-            const expYear = document.getElementById('expYear');
-            const cvc = document.getElementById('cvc');
-
-            // Get error messages
-            const nameError = document.getElementById('nameError');
-            const numberError = document.getElementById('numberError');
-            const dateError = document.getElementById('dateError');
-
-            // Validation
-            let isValid = true;
-
-            if (cardholderName.value.trim() === '') {
-                cardholderName.classList.add('border-red-500');
-                nameError.classList.remove('hidden');
-                isValid = false;
-            } else {
-                cardholderName.classList.remove('border-red-500');
-                nameError.classList.add('hidden');
-            }
-
-            if (cardNumber.value.trim() === '') {
-                cardNumber.classList.add('border-red-500');
-                numberError.classList.remove('hidden');
-                isValid = false;
-            } else {
-                cardNumber.classList.remove('border-red-500');
-                numberError.classList.add('hidden');
-            }
-
-            if (expMonth.value.trim() === '' || expYear.value.trim() === '' || cvc.value.trim() === '') {
-                expMonth.classList.add('border-red-500');
-                expYear.classList.add('border-red-500');
-                cvc.classList.add('border-red-500');
-                dateError.classList.remove('hidden');
-                isValid = false;
-            } else {
-                expMonth.classList.remove('border-red-500');
-                expYear.classList.remove('border-red-500');
-                cvc.classList.remove('border-red-500');
-                dateError.classList.add('hidden');
-            }
-
-            if (isValid) {
-                alert('Form submitted successfully!');
-            }
-
-            formatCardNumber()
-        }
-
-        function formatCardNumber(input) {
-        let value = input.value.replace(/\D/g, ''); // Remove all non-digit characters
-        if (value.length > 16) value = value.substring(0, 16); // Limit the length to 16 digits
-        input.value = value.replace(/(.{4})/g, '$1 ').trim(); // Add spaces every 4 digits
-        }
-     </script> -->
+    
+       
+    
 </body>
 </html>
 
