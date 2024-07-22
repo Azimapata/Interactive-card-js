@@ -3,11 +3,12 @@ const cardNumberInput = document.getElementById('cardNumber');  // Getting the I
 const expMonthInput = document.getElementById('expMonth');    // Getting the Id of the Month using Dom
 const expYearInput = document.getElementById('expYear');    // Getting the Id of the year using Dom
 const cvcInput = document.getElementById('cvc');     // Getting the Id of the cvc number using Dom
-const cardNumberDisplay = document.getElementById('cardNumberDisplay') // Getting the Id of the cvc number using Dom
-const  cardholderNameDisplay = document.getElementById('cardholderNameDisplay') // Getting the Id of the cvc number using Dom
-const  expiryDateDisplay = document.getElementById('expiryDateDisplay') // Getting the Id of the cvc number using Dom
-const cvcnumberDisplay = document.getElementById('cvcnumberDisplay') // Getting the Id of the cvc number using Dom
+const cardNumberDisplay = document.getElementById('cardNumberDisplay') // Getting the Id of the cardNumber showing the display using Dom
+const  cardholderNameDisplay = document.getElementById('cardholderNameDisplay') // Getting the Id of the  cardNumber showing the display using Dom
+const  expiryDateDisplay = document.getElementById('expiryDateDisplay') // Getting the Id of the expirydate (m and yearonth)  showing the display using Dom
+const cvcnumberDisplay = document.getElementById('cvcnumberDisplay') // Getting the Id of the cvc number showing the display using Dom
 const confirmbutton = document.getElementById('confirmbutton') // Getting the Id of the cvc number using Dom
+const  returnButton = document.getElementById('returnButton') // Getting the Id of the cvc number using Dom
 const thank = document.getElementById('thank') // Getting the Id of the cvc number using Dom
 const myForm = document.getElementById('myForm') // Getting the Id of the cvc number using Dom
 
@@ -63,21 +64,28 @@ function validateForm()
         }
 
         if (isValid) {
+  
 
-        }
-
-        
-            // formatCardNumber(cardNumberInput);
-   
+            
             confirmbutton.addEventListener('click', () => {  //function on when the user press the confirm button upon completion the form should not display but the thank you page should display
                 thank.style.display = 'block';   // function so that the thank you page should display
                 myForm.style.display = 'none';  // function so that the form should not display
                 // cardNumberDisplay.textContent =  cardNumber.replace(/(\d{6})(\d{6})(\d+)/, '$1******$3');
                 cardNumberDisplay.textContent  = cardNumber.replace(/(\d{6})(\d{6})(\d+)/, '$1******$3');
               });
+
+
+             
+        }
+
+        
+            // formatCardNumber(cardNumberInput);
+   
+
+          
               
             // confirmbutton.addEventListener('click', () => {
-             
+               
             //     cardNumberDisplay.textContent  = cardNumber.replace(/(\d{6})(\d{6})(\d+)/, '$1******$3');
      
             //     // cardNumberDisplay.textContent =  cardNumber.replace(/(\d{6})(\d{6})(\d+)/, '$1******$3');
@@ -98,7 +106,7 @@ function cardNumbervalidation(cardNumberInput){  // function to make sure that i
 
 function yearvalidation( expYearInput){  // function to make sure that if the user input the year it should be only digits and not more that 2 
     let value = expYearInput.value; // Get the current value of the input field
-    if (value.length > 2) { // condition for the lengt value to when it is freater than 2
+    if (value.length > 2) { // condition for the lengt value to when it is freater than
         expYearInput.value = value.substring(0, 2); // Limit the length to 2 characters
     }
 
@@ -160,5 +168,20 @@ function cvcvalidation( cvcInput){  // function to make sure that if the user in
 
      
       
-
-  
+    returnButton.addEventListener('click', () => {
+        myForm.style.display = 'block';
+        thank.style.display = 'none';
+        cardholderName.value = '';
+        cardNumber.value = '';
+        expMonth.value = '';
+        expYear.value = '';
+        cvc.value = '';
+        cardholderName.classList.remove('border-red-500');
+        cardNumber.classList.remove('border-red-500');
+        expMonth.classList.remove('border-red-500');
+        expYear.classList.remove('border-red-500');
+        cvc.classList.remove('border-red-500');
+        nameError.classList.add('hidden');
+        numberError.classList.add('hidden');
+        dateError.classList.add('hidden');
+      });
